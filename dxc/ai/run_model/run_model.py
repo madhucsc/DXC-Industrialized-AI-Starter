@@ -84,7 +84,7 @@ def run_experiment(design, verbose = False):
     if design["model"] == 'timeseries':
         trained_model = getBestForcastingModel(design['labels'], no_predictions=7, debug=verbose, visualize = False)
         return trained_model
-    globals_file.run_experiment_used = True
+#     globals_file.run_experiment_used = True
     design["model"].build(design["meta_data"])
     design["model"].train_and_score(design["data"], design["labels"], verbose)
     design["model"].interpret()
